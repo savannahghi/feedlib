@@ -2,62 +2,8 @@ package go_utils
 
 import (
 	"fmt"
-	"net/url"
 	"time"
 )
-
-// QueryParam is an interface used for filter and sort parameters
-type QueryParam interface {
-	ToURLValues() (values url.Values)
-}
-
-// PaginationInput represents paging parameters
-type PaginationInput struct {
-	First  int    `json:"first"`
-	Last   int    `json:"last"`
-	After  string `json:"after"`
-	Before string `json:"before"`
-}
-
-//IsEntity ...
-func (p PaginationInput) IsEntity() {}
-
-// SortInput is a generic container for strongly typed sorting parameters
-type SortInput struct {
-	SortBy []*SortParam `json:"sortBy"`
-}
-
-//IsEntity ...
-func (s SortInput) IsEntity() {}
-
-// SortParam represents a single field sort parameter
-type SortParam struct {
-	FieldName string    `json:"fieldName"`
-	SortOrder SortOrder `json:"sortOrder"`
-}
-
-//IsEntity ...
-func (s SortParam) IsEntity() {}
-
-// FilterInput is s generic container for strongly type filter parameters
-type FilterInput struct {
-	Search   *string        `json:"search"`
-	FilterBy []*FilterParam `json:"filterBy"`
-}
-
-//IsEntity ...
-func (f FilterInput) IsEntity() {}
-
-// FilterParam represents a single field filter parameter
-type FilterParam struct {
-	FieldName           string      `json:"fieldName"`
-	FieldType           FieldType   `json:"fieldType"`
-	ComparisonOperation Operation   `json:"comparisonOperation"`
-	FieldValue          interface{} `json:"fieldValue"`
-}
-
-//IsEntity ...
-func (f FilterParam) IsEntity() {}
 
 // PhoneOptIn is used to persist and manage phone communication whitelists
 type PhoneOptIn struct {
@@ -85,16 +31,6 @@ type EmailOptIn struct {
 
 //IsEntity ...
 func (e EmailOptIn) IsEntity() {}
-
-// FirebaseRefreshResponse is used to (de)serialize the results of a successful Firebase token refresh
-type FirebaseRefreshResponse struct {
-	ExpiresIn    string `json:"expires_in"`
-	TokenType    string `json:"token_type"`
-	RefreshToken string `json:"refresh_token"`
-	IDToken      string `json:"id_token"`
-	UserID       string `json:"user_id"`
-	ProjectID    string `json:"project_id"`
-}
 
 // PIN is used to store a PIN (Personal Identifiation Number) associated
 // to a phone number sign up to Firebase

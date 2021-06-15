@@ -12,6 +12,8 @@ import (
 	"strconv"
 	"strings"
 	"time"
+
+	fb "github.com/savannahghi/firebasetools"
 )
 
 // BoolEnv gets and parses a boolean environment variable
@@ -124,7 +126,7 @@ func MergeURLValues(values ...url.Values) url.Values {
 
 // GetAPIPaginationParams composes pagination parameters for use by a REST API that uses
 // offset based pagination
-func GetAPIPaginationParams(pagination *PaginationInput) (url.Values, error) {
+func GetAPIPaginationParams(pagination *fb.PaginationInput) (url.Values, error) {
 	if pagination == nil {
 		return url.Values{}, nil
 	}

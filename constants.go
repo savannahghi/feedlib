@@ -21,10 +21,6 @@ const (
 	// Sep is a separator, used to create "opaque" IDs
 	Sep = "|"
 
-	// DefaultPageSize is used to paginate records (e.g those fetched from Firebase)
-	// if there is no user specified page size
-	DefaultPageSize = 100
-
 	// FirebaseWebAPIKeyEnvVarName is the name of the env var that holds a Firebase web API key
 	// for this project
 	FirebaseWebAPIKeyEnvVarName = "FIREBASE_WEB_API_KEY"
@@ -113,9 +109,6 @@ const (
 	// CIEnvVarName is set to "true" in CI environments e.g Gitlab CI, Github actions etc.
 	// It can be used to opt in to / out of tests in such environments
 	CIEnvVarName = "CI"
-
-	// AuthTokenContextKey is used to add/retrieve the Firebase UID on the context
-	AuthTokenContextKey = ContextKey("UID")
 
 	// HTTP client settings
 	HTTPClientTimeoutSecs = 10
