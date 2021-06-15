@@ -1,4 +1,4 @@
-package go_utils
+package feedlib
 
 import (
 	"encoding/json"
@@ -11,6 +11,7 @@ import (
 	"time"
 
 	"github.com/asaskevich/govalidator"
+	sv "github.com/savannahghi/server_utils"
 	"github.com/segmentio/ksuid"
 	"github.com/xeipuuv/gojsonschema"
 )
@@ -1020,7 +1021,7 @@ func GetPDFDocumentLink(url string, title string, description string, thumbnailU
 // This has been done so as to reduce the impact of the network and DNS on the
 // schema validation process - a critical path activity.
 func getSchemaURL() string {
-	schemaHost, err := GetEnvVar(SchemaHostEnvVarName)
+	schemaHost, err := sv.GetEnvVar(SchemaHostEnvVarName)
 	if err != nil {
 		log.Printf("can't get env var `%s`: %s", SchemaHostEnvVarName, err)
 	}

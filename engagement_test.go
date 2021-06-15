@@ -1,4 +1,4 @@
-package go_utils_test
+package feedlib_test
 
 import (
 	"bytes"
@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	base "github.com/savannahghi/go_utils"
+	base "github.com/savannahghi/feedlib"
 	"github.com/segmentio/ksuid"
 	"github.com/stretchr/testify/assert"
 )
