@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/savannahghi/feedlib.svg?branch=port-feed-lib)](https://travis-ci.com/savannahghi/feedlib)
+[![Build Status](https://travis-ci.com/savannahghi/feedlib.svg?branch=main)](https://travis-ci.com/savannahghi/feedlib)
 [![Maintained](https://img.shields.io/badge/Maintained-Actively-informational.svg?style=for-the-badge)](https://shields.io/)
 [![MIT license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
 # Feed Library
