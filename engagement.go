@@ -11,7 +11,7 @@ import (
 	"time"
 
 	"github.com/asaskevich/govalidator"
-	sv "github.com/savannahghi/server_utils"
+	sv "github.com/savannahghi/serverutils"
 	"github.com/segmentio/ksuid"
 	"github.com/xeipuuv/gojsonschema"
 )
