@@ -1,6 +1,7 @@
 [![Build Status](https://travis-ci.com/savannahghi/feedlib.svg?branch=main)](https://travis-ci.com/savannahghi/feedlib)
 [![Maintained](https://img.shields.io/badge/Maintained-Actively-informational.svg?style=for-the-badge)](https://shields.io/)
-[![MIT license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
+[![MIT license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT) ![Linting and Tests](https://github.com/savannahghi/feedlib/actions/workflows/ci.yml/badge.svg)
+[![Coverage Status](https://coveralls.io/repos/github/savannahghi/feedlib/badge.svg?branch=main)](https://coveralls.io/github/savannahghi/feedlib?branch=main)
 # Feed Library
 feedlib  is an open source project — it's one among many other shared libraries that make up the wider ecosystem of software made and open sourced by Savannah Informatics Limited.
 
