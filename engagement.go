@@ -433,6 +433,10 @@ func (l *Link) validateLinkType() error {
 		if !strings.Contains(l.URL, ".png") {
 			return fmt.Errorf("%s does not end with .pdf", l.URL)
 		}
+	case LinkTypeMp4:
+		if !strings.Contains(l.URL, ".mp4") {
+			return fmt.Errorf("%s does not end with .mp4", l.URL)
+		}
 	case LinkTypePngImage:
 		if !strings.Contains(l.URL, ".png") {
 			return fmt.Errorf("%s does not end with .png", l.URL)
@@ -722,6 +726,7 @@ const (
 	LinkTypePngImage     LinkType = "PNG_IMAGE"
 	LinkTypePdfDocument  LinkType = "PDF_DOCUMENT"
 	LinkTypeSvgImage     LinkType = "SVG_IMAGE"
+	LinkTypeMp4          LinkType = "MP4"
 	LinkTypeDefault      LinkType = "DEFAULT"
 )
 
@@ -731,13 +736,14 @@ var AllLinkType = []LinkType{
 	LinkTypePngImage,
 	LinkTypePdfDocument,
 	LinkTypeSvgImage,
+	LinkTypeMp4,
 	LinkTypeDefault,
 }
 
 // IsValid is true only when a link type is avalid
 func (e LinkType) IsValid() bool {
 	switch e {
-	case LinkTypeYoutubeVideo, LinkTypePngImage, LinkTypePdfDocument, LinkTypeSvgImage, LinkTypeDefault:
+	case LinkTypeYoutubeVideo, LinkTypePngImage, LinkTypePdfDocument, LinkTypeSvgImage, LinkTypeMp4, LinkTypeDefault:
 		return true
 	}
 	return false
@@ -1010,6 +1016,20 @@ func GetPDFDocumentLink(url string, title string, description string, thumbnailU
 		ID:          ksuid.New().String(),
 		URL:         url,
 		LinkType:    LinkTypePdfDocument,
+		Title:       title,
+		Description: description,
+		Thumbnail:   thumbnailURL,
+	}
+}
+
+// GetMP4Link returns an initialized MP4 link.
+//
+// It is used in testing and default data generation.
+func GetMP4Link(url string, title string, description string, thumbnailURL string) Link {
+	return Link{
+		ID:          ksuid.New().String(),
+		URL:         url,
+		LinkType:    LinkTypeMp4,
 		Title:       title,
 		Description: description,
 		Thumbnail:   thumbnailURL,
