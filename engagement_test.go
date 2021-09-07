@@ -1015,6 +1015,11 @@ func TestLinkType_MarshalGQL(t *testing.T) {
 			e:     feedlib.LinkTypeYoutubeVideo,
 			wantW: `"YOUTUBE_VIDEO"`,
 		},
+		{
+			name:  "MP4",
+			e:     feedlib.LinkTypeMp4,
+			wantW: `"MP4"`,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
