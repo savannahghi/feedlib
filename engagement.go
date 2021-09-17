@@ -332,6 +332,9 @@ type Item struct {
 
 	// How the user should be notified of this new item, if at all
 	NotificationChannels []Channel `json:"notificationChannels,omitempty" firestore:"notificationChannels,omitempty"`
+
+	// FeatureImage represents the image associated to a post
+	FeatureImage string `json:"feature_image"`
 }
 
 // ValidateAndUnmarshal checks that the input data is valid as per the
